@@ -10,6 +10,6 @@ setup(name='parapy',
       description='Parabola Geoprocessing Server Utilities',
       author='McClintock Lab, UCSB',
       author_email='admin@seasketch.org',
-      url='https://github.com/mcclintock-lab/parabolapy',
+      url='https://github.com/mcclintock-lab/parapy',
       packages=['parapy'],
      )
