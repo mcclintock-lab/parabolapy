@@ -1,3 +1,3 @@
 def touch():
-  print "ParabolaPy is loaded!"
+  print "ParaPy is loaded!"
 

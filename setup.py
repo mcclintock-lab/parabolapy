@@ -11,5 +11,5 @@ setup(name='parapy',
       author='McClintock Lab, UCSB',
       author_email='admin@seasketch.org',
       url='https://github.com/mcclintock-lab/parapy',
-      packages=['parapy'],
+      py_modules=['parapy'],
      )
