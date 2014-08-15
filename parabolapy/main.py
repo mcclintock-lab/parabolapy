@@ -1,3 +1,3 @@
-def touch(fname, times=None):
+def touch():
   print "ParabolaPy is loaded!"
 
