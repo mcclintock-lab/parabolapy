@@ -5,12 +5,12 @@ try:
 except ImportError:
       from distutils.core import setup
 
-setup(name='parabolapy',
+setup(name='parapy',
       version='0.1',
       description='Parabola Geoprocessing Server Utilities',
       author='McClintock Lab, UCSB',
       author_email='admin@seasketch.org',
       url='https://github.com/mcclintock-lab/parabolapy',
-      packages=['parabolapy'],
-      package_dir={'parabolapy': 'parabolapy'},
+      packages=['parapy'],
+      package_dir={'parapy': 'parapy'},
      )
