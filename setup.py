@@ -12,5 +12,4 @@ setup(name='parapy',
       author_email='admin@seasketch.org',
       url='https://github.com/mcclintock-lab/parabolapy',
       packages=['parapy'],
-      package_dir={'parapy': 'parapy'},
      )
