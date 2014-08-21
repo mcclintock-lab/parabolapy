@@ -25,7 +25,7 @@ def getInputAsGeoJson():
 
 def setOutputByName(name, geojson): 
   global _output;
-  _output[name] = geojson;
+  _output[name] = jsonlib.read(geojson);
 
 def sendOutput():
   global _output;
@@ -36,10 +36,8 @@ def sendOutput():
 def _getInputJson():
   global _input
   if len(_input) > 0:
-    print("Already read input, returning")
     return(_input)
   this_input = sys.stdin.read()
-  print("Read stdin and got %", this_input)
   _input = jsonlib.read(this_input)
   return(_input)
 
