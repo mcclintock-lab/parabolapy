@@ -29,7 +29,7 @@ def setOutputByName(name, geojson):
 
 def sendOutput():
   global _output;
-  outfile = os.fdopen(4, 'w');
+  outfile = os.fdopen(3, 'w');
   outfile.write(jsonlib.write(_output));
   outfile.close();
 
