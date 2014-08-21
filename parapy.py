@@ -29,15 +29,17 @@ def setOutputByName(name, geojson):
 
 def sendOutput():
   global _output;
-  outfile = os.fdopen(3, 'w');
+  outfile = os.fdopen(4, 'w');
   outfile.write(_output);
   outfile.close();
 
 def _getInputJson():
   global _input
   if len(_input) > 0:
+    print("Already read input, returning")
     return(_input)
   this_input = sys.stdin.read()
+  print("Read stdin and got %", this_input)
   _input = jsonlib.read(this_input)
   return(_input)
 
