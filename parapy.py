@@ -1,5 +1,6 @@
 import sys, os
 import jsonlib
+import psycopg2
 
 
 _input = '';
@@ -23,15 +24,23 @@ def getInputAsObject():
 def getInputAsGeoJson():
   return(jsonlib.write(getInputAsObject()));
 
-def setOutputByName(name, geojson): 
+def setGeoJsonOutputByName(name, geojson): 
   global _output;
   _output[name] = jsonlib.read(geojson);
+
+def setStringOutputByName(name, text): 
+  global _output;
+  _output[name] = text;
 
 def sendOutput():
   global _output;
   outfile = os.fdopen(3, 'w');
   outfile.write(jsonlib.write(_output));
   outfile.close();
+
+def getDatabaseConnection():
+  info = _getDatabaseInformation();
+  return(psycopg2.connect("dbname={} user={}".format(info['dbname'], info['dbuser'])));
 
 def _getInputJson():
   global _input
@@ -40,4 +49,11 @@ def _getInputJson():
   this_input = sys.stdin.read()
   _input = jsonlib.read(this_input)
   return(_input)
+
+def _getDatabaseInformation():
+  this_input = _getInputJson();
+  info = {};
+  info['dbname'] = this_input['db']['name'];
+  info['dbuser'] = this_input['db']['username'];
+  return(info);
 
